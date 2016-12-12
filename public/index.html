@@ -9,8 +9,16 @@
 
 	<div id="favorites"></div>
 
+	<form>
+	  <input id="searchTerm" type="text" name="searchTerm" value="search">
+	</form> 
+	<button onclick="OmdbService.searchForMovieByName()">Search</button>
+
+	<div id="searchResults"></div>
+
 </body>
 
 <script type="text/javascript" src="javascripts/services/favoritesService.js"></script>
+<script type="text/javascript" src="javascripts/services/omdbService.js"></script>
 
 </html>

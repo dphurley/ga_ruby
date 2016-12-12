@@ -58,6 +58,19 @@ OmdbService.displayAdditionalInfoForMovieByImdbId = function displayAdditionalIn
 	omdbHttpRequest.send();
 }
 
+function closeAdditionalInfoForMovie(imdbID) {
+
+	// Clear the DOM element to collapse the 'More Info' section for a movie
+	document.getElementById(imdbID + '_info').innerHTML = null;
+
+	/* 
+		We'll want to show the 'More Info' button that we had previously hidden.
+
+		To do this, we can simply set the 'visibility' back to 'visible'
+	*/
+	document.getElementById(imdbID + '_more_info_button').style.visibility = 'visible';
+}
+
 function buildSearchResultHTML(searchResponse) {
 	
 	/*
@@ -111,7 +124,8 @@ function buildAdditionalInfoHTML(lookupResponse) {
 		'<div>Metascore: ' + lookupResponse.Metascore + '</div>',
 		'<div>IMDB Rating: ' + lookupResponse.imdbRating + '</div>',
 		'<div>IMDB Votes: ' + lookupResponse.imdbVotes + '</div>',
-		'<div>Type: ' + lookupResponse.Type + '</div>'
+		'<div>Type: ' + lookupResponse.Type + '</div>',
+		'<button onclick="closeAdditionalInfoForMovie(\'' + lookupResponse.imdbID + '\')">Close</button>'
 	)    	
 
     return resultHTML.join("");

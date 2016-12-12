@@ -2,6 +2,24 @@ var favoriteHttpRequest = new XMLHttpRequest();
 
 var FavoritesService = function () {}
 
+FavoritesService.addFavorite = function addFavorite(movieTitle, imdbID) {
+	
+	// Add all query parameters to the URL, ensuring all params are URI encoded
+	var url = 
+		'/addFavorite?movie_title=' + encodeURIComponent(movieTitle) + 
+		'&imdb_id=' + encodeURIComponent(imdbID);
+	
+	// Make an asynchronous call to add the new favorite to the datab
+	favoriteHttpRequest.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log('Successfully added ' + movieTitle);
+	    }
+	}
+	favoriteHttpRequest.open("POST", url, true);
+	favoriteHttpRequest.send();
+
+}
+
 FavoritesService.retrieveAndDisplayFavorites = function retrieveAndDisplayFavorites() {
 
 	/* 

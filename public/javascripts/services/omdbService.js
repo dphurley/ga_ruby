@@ -89,7 +89,10 @@ function buildSearchResultHTML(searchResponse) {
 	    		'<img src="' + movieResult.Poster + '" alt="' + movieResult.Title + '"/>',
 	    		'<div id="' + movieResult.imdbID + '_more_info_button">',
 	    			'<button onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')">More Info</button>',
-				'</div>',   	
+				'</div>',  
+				'<div id="' + movieResult.imdbID + '_favorite">',
+	    			'<button onclick="FavoritesService.addFavorite(\'' + movieResult.Title + '\', \'' + movieResult.imdbID + '\')" style="display: block; margin: auto; margin-top: 20px; margin-bottom: 20px;">Add to Favorites</button>',
+				'</div>',	 	
 	    		'<div id="' + movieResult.imdbID + '_info"></div>',
 	    	'</div>'
 		)    	

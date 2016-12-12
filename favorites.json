@@ -26,6 +26,26 @@
     {
       "movie_title": "fieldofdreams",
       "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "Star Wars: Episode VI - Return of the Jedi",
+      "imdb_id": "tt0086190"
+    },
+    {
+      "movie_title": "Star Wars: The Clone Wars",
+      "imdb_id": "tt1185834"
+    },
+    {
+      "movie_title": "In Bruges",
+      "imdb_id": "tt0780536"
     }
   ]
 }

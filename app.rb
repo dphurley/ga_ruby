@@ -3,7 +3,7 @@ require 'json'
 
 # GET call that serves up the HTML page
 get '/' do 
-  File.read('views/index.html')
+  File.read('public/index.html')
 end
 
 # This is the GET call that will serve up favorites from the 'database'
@@ -18,8 +18,14 @@ post '/addFavorite' do
   
   return 'Invalid Request' unless params[:movie_title] && params[:omdb_id]
 
-  movie = { movie_title: params[:movie_title], omdb_id: params[:omdb_id] }
-  favorites << movie
+  new_favorite = { 
+    "movie_title" => params[:movie_title], 
+    "omdb_id" => params[:omdb_id] 
+  }
+
+  favorites['favorites'] << new_favorite
+  
   File.write('favorites.json',JSON.pretty_generate(favorites))
-  movie.to_json
+
+  new_favorite.to_json
 end

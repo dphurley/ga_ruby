@@ -1,7 +1,31 @@
 {
-	"favorites": [
-		{
-			"some": "movie"
-		}
-	]
+  "favorites": [
+    {
+      "some": "movie"
+    },
+    {
+      "movie_title": "'fieldofdreams'",
+      "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "'fieldofdreams'",
+      "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "'fieldofdreams'",
+      "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "'fieldofdreams'",
+      "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "fieldofdreams",
+      "omdb_id": "'12345'"
+    },
+    {
+      "movie_title": "fieldofdreams",
+      "omdb_id": "'12345'"
+    }
+  ]
 }

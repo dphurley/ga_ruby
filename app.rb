@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'json'
 
 # GET call that serves up the HTML page
 get '/' do 
@@ -12,7 +13,7 @@ get '/favorites' do
 end
 
 # This is the POST call that will add new favorites to the 'database'
-post '/favorites' do
+post '/addFavorite' do
   file = JSON.parse(File.read('favorites.json'))
   
   return 'Invalid Request' unless params[:name] && params[:oid]

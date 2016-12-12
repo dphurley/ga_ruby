@@ -28,7 +28,7 @@ post '/addFavorite' do
     'imdb_id' => params[:imdb_id] 
   }
   
-  return 'You have already favorited this movie.' unless !movie_already_exists_in_favorites(favorites, new_favorite)
+  return 'You have already favorited this movie.' unless movie_is_a_new_favorite(favorites, new_favorite)
 
   # Add the new hash to the existing list of Favorites in the 'database'
   favorites['favorites'] << new_favorite
@@ -38,8 +38,12 @@ post '/addFavorite' do
   new_favorite.to_json
 end
 
-def movie_already_exists_in_favorites(favorites, new_favorite)
-  favorites['favorites'].any? do |favoritedMovie|
+
+
+private
+
+def movie_is_a_new_favorite(favorites, new_favorite)
+  !favorites['favorites'].any? do |favoritedMovie|
     favoritedMovie['imdb_id'] == new_favorite['imdb_id']
   end
 end

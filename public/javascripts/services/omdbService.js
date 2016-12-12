@@ -86,7 +86,7 @@ function buildSearchResultHTML(searchResponse) {
     	resultHTML.push(
     		'<div id="' + movieResult.imdbID + '_display">',
 	    		'<h4>'+ movieResult.Title.toUpperCase() + '</h4>',
-	    		'<img src="' + movieResult.Poster + '" alt="' + movieResult.Title + '"/>',
+	    		'<img src="' + movieResult.Poster + '" alt="' + movieResult.Title + '" onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')"/>',
 	    		'<div id="' + movieResult.imdbID + '_more_info_button">',
 	    			'<button onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')">More Info</button>',
 				'</div>',  

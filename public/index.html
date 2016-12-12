@@ -25,16 +25,15 @@
 		<div id="searchResults"></div>
 	</div>
 
+
+	<script type="text/javascript" src="javascripts/services/favoritesService.js"></script>
+	<script type="text/javascript" src="javascripts/services/omdbService.js"></script>
+	<script type="text/javascript">
+		// Allows us to use submit button within a form to make AJAX calls without refreshing
+		document.getElementById('searchForm').addEventListener('submit', function(event){ 
+	        event.preventDefault();
+	   });
+	</script>
 </body>
-
-
-<script type="text/javascript" src="javascripts/services/favoritesService.js"></script>
-<script type="text/javascript" src="javascripts/services/omdbService.js"></script>
-<script type="text/javascript">
-	// Allows us to use submit button within a form to make AJAX calls without refreshing
-	document.getElementById('searchForm').addEventListener('submit', function(event){ 
-        event.preventDefault();
-   });
-</script>
 
 </html>

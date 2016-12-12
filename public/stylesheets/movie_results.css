@@ -1,0 +1,26 @@
+.MovieSearchResult {
+	display: inline-block; 
+	margin: 20px; 
+	width: 400px; 
+	box-shadow: 1px 1px 1px #D3D3D3; 
+	border: 1px solid #D3D3D3;
+}
+
+.MovieSearchResult .movieTitle {
+	text-align: center; 
+	font-family: Impact, Charcoal, sans-serif;
+}
+
+.MovieSearchResult .moviePoster {
+	height: 250px; 
+	display: block; 
+	margin: auto; 
+	box-shadow: 5px 5px 3px #D3D3D3;
+}
+
+.MovieSearchResult .button {
+	display: block; 
+	margin: auto; 
+	margin-top: 20px; 
+	margin-bottom: 20px;
+}

@@ -84,14 +84,14 @@ function buildSearchResultHTML(searchResponse) {
 	var resultHTML = [];
     searchResponse.Search.forEach(function (movieResult) {
     	resultHTML.push(
-    		'<div id="' + movieResult.imdbID + '_display">',
-	    		'<h4>'+ movieResult.Title.toUpperCase() + '</h4>',
-	    		'<img src="' + movieResult.Poster + '" alt="' + movieResult.Title + '" onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')"/>',
+    		'<div id="' + movieResult.imdbID + '_display" class="MovieSearchResult">',
+	    		'<h4 class="movieTitle">'+ movieResult.Title.toUpperCase() + '</h4>',
+	    		'<img src="' + movieResult.Poster + '" alt="' + movieResult.Title + '" onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')" class="moviePoster"/>',
 	    		'<div id="' + movieResult.imdbID + '_more_info_button">',
-	    			'<button onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')">More Info</button>',
+	    			'<button onclick="OmdbService.displayAdditionalInfoForMovieByImdbId(\'' + movieResult.imdbID + '\')" class="button">More Info</button>',
 				'</div>',  
-				'<div id="' + movieResult.imdbID + '_favorite">',
-	    			'<button onclick="FavoritesService.addFavorite(\'' + movieResult.Title + '\', \'' + movieResult.imdbID + '\')" style="display: block; margin: auto; margin-top: 20px; margin-bottom: 20px;">Add to Favorites</button>',
+				'<div id="' + movieResult.imdbID + '_favorite" "button">',
+	    			'<button onclick="FavoritesService.addFavorite(\'' + movieResult.Title + '\', \'' + movieResult.imdbID + '\')" class="button">Add to Favorites</button>',
 				'</div>',	 	
 	    		'<div id="' + movieResult.imdbID + '_info"></div>',
 	    	'</div>'

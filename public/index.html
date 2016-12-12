@@ -2,24 +2,38 @@
 <html>
 <head>
 	<title>Movies Database</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/search_form.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/movie_results.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/favorites.css">
 </head>
 <body>
 
-	<button onclick="FavoritesService.retrieveAndDisplayFavorites()">Show My Favorites</button>
+	<div>
+		<div id="favorites" class="Favorites">
+			<button onclick="FavoritesService.retrieveAndDisplayFavorites()">Show My Favorites</button>
+			<div id="favorites"></div>
+		</div>
 
-	<div id="favorites"></div>
-	<br>
+		<br>
+		<h2>Search for Movies:</h2>
+		<form onsubmit="OmdbService.searchForMovieByName()" class="SearchForm" id="searchForm">
+		  	<input id="searchTerm" type="text" name="searchTerm" placeholder="Search for movies" class="inputBox">
+		  	<input type="submit" value="Search">
+		</form> 
 
-	<form>
-	  <input id="searchTerm" type="text" name="searchTerm" value="search">
-	</form> 
-	<button onclick="OmdbService.searchForMovieByName()">Search</button>
-
-	<div id="searchResults"></div>
+		<div id="searchResults"></div>
+	</div>
 
 </body>
 
+
 <script type="text/javascript" src="javascripts/services/favoritesService.js"></script>
 <script type="text/javascript" src="javascripts/services/omdbService.js"></script>
+<script type="text/javascript">
+	// Allows us to use submit button within a form to make AJAX calls without refreshing
+	document.getElementById('searchForm').addEventListener('submit', function(event){ 
+        event.preventDefault();
+   });
+</script>
 
 </html>

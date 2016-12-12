@@ -14,12 +14,12 @@ end
 
 # This is the POST call that will add new favorites to the 'database'
 post '/addFavorite' do
-  file = JSON.parse(File.read('favorites.json'))
+  favorites = JSON.parse(File.read('favorites.json'))
   
-  return 'Invalid Request' unless params[:name] && params[:oid]
+  return 'Invalid Request' unless params[:movie_title] && params[:omdb_id]
 
-  movie = { name: params[:name], oid: params[:oid] }
-  file << movie
-  File.write('favorites.json',JSON.pretty_generate(file))
+  movie = { movie_title: params[:movie_title], omdb_id: params[:omdb_id] }
+  favorites << movie
+  File.write('favorites.json',JSON.pretty_generate(favorites))
   movie.to_json
 end
